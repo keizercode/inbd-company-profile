@@ -1,7 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Users } from 'lucide-react'
 import strukturOrg1 from '@/assets/struktur-org-1.png'
 import strukturOrg2 from '@/assets/struktur-org-2.png'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Users } from 'lucide-react'
 
 const StrukturOrganisasi = () => {
   return (
@@ -100,7 +100,7 @@ const StrukturOrganisasi = () => {
                     Staf Administrasi
                   </h3>
                   <p className="text-muted-foreground ml-5">
-                    Rakmah Laila Sahar
+                    Rahmah Laila Sahar
                   </p>
                 </div>
               </div>
