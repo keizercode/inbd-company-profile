@@ -1,8 +1,8 @@
+import logo from '@/assets/logo.png'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowRight, Shield, Zap, Users, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, Shield, Users, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import logo from '@/assets/logo.png'
 
 const Home = () => {
   return (
@@ -31,7 +31,7 @@ const Home = () => {
               berkelanjutan untuk mendukung transformasi digital industri
               kesehatan di Indonesia
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link to="/profil">
                 <Button size="lg" variant="secondary" className="group">
                   Tentang Kami
@@ -45,7 +45,7 @@ const Home = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  className="bg-primary/20 text-primary-foreground border border-primary/40 hover:bg-primary hover:text-primary-foreground transition-all"
                 >
                   Hubungi Kami
                 </Button>
@@ -55,8 +55,68 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Kebijakan Mutu Section - NEW */}
       <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Kebijakan Mutu
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Nilai-nilai yang menjadi fondasi kuat dalam setiap langkah kami
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                letter: 'I',
+                title: 'Integritas',
+                desc: 'Menjunjung kejujuran dan etika dalam setiap pekerjaan sesuai dengan persyaratan yang berlaku',
+                color: 'primary'
+              },
+              {
+                letter: 'N',
+                title: 'Niat Terbaik',
+                desc: 'Selalu bekerja dengan tujuan mulia untuk memberikan manfaat',
+                color: 'secondary'
+              },
+              {
+                letter: 'B',
+                title: 'Berkualitas',
+                desc: 'Menghasilkan produk dan layanan dengan standar tinggi',
+                color: 'accent'
+              },
+              {
+                letter: 'D',
+                title: 'Dedikasi',
+                desc: 'Komitmen dalam melayani dengan peningkatan berkesinambungan',
+                color: 'primary'
+              }
+            ].map((item, index) => (
+              <Card
+                key={index}
+                className="border-2 hover:shadow-xl transition-all group hover:border-primary"
+              >
+                <CardContent className="p-6 text-center">
+                  <div
+                    className={`w-16 h-16 bg-${item.color} text-${item.color}-foreground rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-2xl`}
+                  >
+                    {item.letter}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section - UPDATED: Always show text */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -69,9 +129,9 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-2 hover:border-primary transition-all hover:shadow-lg group">
+            <Card className="border-2 border-primary/20 bg-primary/5 hover:shadow-lg transition-all group hover:border-primary">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/30 transition-colors">
                   <Shield className="text-primary" size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground">
@@ -84,9 +144,9 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-secondary transition-all hover:shadow-lg group">
+            <Card className="border-2 border-secondary/20 bg-secondary/5 hover:shadow-lg transition-all group hover:border-secondary">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/20 transition-colors">
+                <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/30 transition-colors">
                   <Zap className="text-secondary" size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground">
@@ -99,9 +159,9 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-accent transition-all hover:shadow-lg group">
+            <Card className="border-2 border-accent/20 bg-accent/5 hover:shadow-lg transition-all group hover:border-accent">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors">
+                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/30 transition-colors">
                   <Users className="text-accent" size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground">
@@ -112,64 +172,6 @@ const Home = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Nilai-Nilai Kami
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Fondasi kuat yang memandu setiap langkah kami
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  letter: 'I',
-                  title: 'Integritas',
-                  desc: 'Menjunjung kejujuran dan etika dalam setiap pekerjaan'
-                },
-                {
-                  letter: 'N',
-                  title: 'Niat Terbaik',
-                  desc: 'Selalu bekerja dengan tujuan mulia untuk memberikan manfaat'
-                },
-                {
-                  letter: 'B',
-                  title: 'Berkualitas',
-                  desc: 'Menghasilkan produk dan layanan dengan standar tinggi'
-                },
-                {
-                  letter: 'D',
-                  title: 'Dedikasi',
-                  desc: 'Komitmen dalam melayani dengan peningkatan berkesinambungan'
-                }
-              ].map((value, index) => (
-                <Card
-                  key={index}
-                  className="border-l-4 border-l-primary hover:shadow-md transition-shadow"
-                >
-                  <CardContent className="p-6 flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary text-primary-foreground rounded-lg flex items-center justify-center font-bold text-xl flex-shrink-0">
-                      {value.letter}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2 text-foreground">
-                        {value.title}
-                      </h3>
-                      <p className="text-muted-foreground">{value.desc}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -189,7 +191,7 @@ const Home = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg font-semibold rounded-xl"
               >
                 Hubungi Kami Sekarang
                 <ArrowRight className="ml-2" size={20} />

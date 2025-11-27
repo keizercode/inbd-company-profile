@@ -24,22 +24,26 @@ const VisiMisi = () => {
     {
       letter: 'I',
       title: 'Integritas',
-      desc: 'Menjunjung kejujuran dan etika dalam setiap pekerjaan sesuai dengan persyaratan yang berlaku.'
+      desc: 'Menjunjung kejujuran dan etika dalam setiap pekerjaan sesuai dengan persyaratan yang berlaku.',
+      color: 'primary'
     },
     {
       letter: 'N',
       title: 'Niat Terbaik',
-      desc: 'Selalu bekerja dengan tujuan mulia untuk memberikan manfaat.'
+      desc: 'Selalu bekerja dengan tujuan mulia untuk memberikan manfaat.',
+      color: 'secondary'
     },
     {
       letter: 'B',
       title: 'Berkualitas',
-      desc: 'Menghasilkan produk dan layanan dengan standar tinggi.'
+      desc: 'Menghasilkan produk dan layanan dengan standar tinggi.',
+      color: 'accent'
     },
     {
       letter: 'D',
       title: 'Dedikasi',
-      desc: 'Komitmen dalam melayani dan menyelesaikan pekerjaan dengan aspek peningkatan berkesinambungan.'
+      desc: 'Komitmen dalam melayani dan menyelesaikan pekerjaan dengan aspek peningkatan berkesinambungan.',
+      color: 'primary'
     }
   ]
 
@@ -163,7 +167,23 @@ const VisiMisi = () => {
                   className="border-l-4 border-l-primary hover:shadow-lg transition-shadow"
                 >
                   <CardContent className="p-6 flex items-start space-x-4">
-                    <div className="w-14 h-14 bg-primary text-primary-foreground rounded-lg flex items-center justify-center font-bold text-2xl flex-shrink-0">
+                    <div
+                      className={`
+                          w-14 h-14 rounded-lg flex items-center justify-center font-bold text-2xl flex-shrink-0
+                          ${
+                            item.color === 'primary' &&
+                            'bg-primary text-primary-foreground'
+                          }
+                          ${
+                            item.color === 'secondary' &&
+                            'bg-secondary text-secondary-foreground'
+                          }
+                          ${
+                            item.color === 'accent' &&
+                            'bg-accent text-accent-foreground'
+                          }
+                        `}
+                    >
                       {item.letter}
                     </div>
                     <div>
