@@ -1,5 +1,5 @@
-import { Mail, MapPin, Phone } from 'lucide-react'
 import logo from '@/assets/logo.png'
+import { Mail, MapPin } from 'lucide-react'
 
 const Footer = () => {
   return (
@@ -65,7 +65,13 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
-                <span>Hermina Tower Seven, Central Jakarta</span>
+                <span>
+                  Hermina Tower, Jl.Selangit Blok B.10 Kavling No.4
+                  <br />
+                  Kemayoran, Central Jakarta
+                  <br />
+                  Indonesia 10620
+                </span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={18} className="flex-shrink-0" />

@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Mail, MapPin, Phone, Send } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
+import { Mail, MapPin, Phone, Send } from 'lucide-react'
+import { useState } from 'react'
 
 const Kontak = () => {
   const { toast } = useToast()
@@ -62,11 +62,11 @@ const Kontak = () => {
                   Alamat
                 </h3>
                 <p className="text-muted-foreground">
-                  Hermina Tower Seven
+                  Hermina Tower, Jl.Selangit Blok B.10 Kavling No.4 Kemayoran
                   <br />
                   Central Jakarta
                   <br />
-                  Indonesia
+                  Indonesia 10620
                 </p>
               </CardContent>
             </Card>
