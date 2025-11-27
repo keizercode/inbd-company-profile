@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #2563EB 0%, #10B981 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 60px;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        p {
+            font-size: 32px;
+            margin: 0;
+            opacity: 0.95;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="logo.png" alt="INBD Logo">
+    <h1>PT Integrasi Bisnis Digital</h1>
+    <p>Solusi Digital Tepat, Layanan Kesehatan Hebat</p>
+</body>
+</html>
