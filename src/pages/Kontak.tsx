@@ -6,6 +6,8 @@ import { useToast } from '@/hooks/use-toast'
 import { Mail, MapPin, Phone, Send } from 'lucide-react'
 import { useState } from 'react'
 
+import emailjs from '@emailjs/browser'
+
 const Kontak = () => {
   const { toast } = useToast()
   const [formData, setFormData] = useState({
@@ -15,15 +17,44 @@ const Kontak = () => {
     subject: '',
     message: ''
   })
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    toast({
-      title: 'Pesan Terkirim!',
-      description:
-        'Terima kasih telah menghubungi kami. Tim kami akan segera menghubungi Anda.'
-    })
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    setIsLoading(true)
+
+    try {
+      // Ganti dengan Service ID, Template ID, dan Public Key dari EmailJS
+      await emailjs.send(
+        'service_nuxbi68', // Dari EmailJS dashboard
+        'template_o46fo89', // Dari EmailJS dashboard
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message
+        },
+        'mXWRadCtGxTMDQWFO' // Dari EmailJS dashboard
+      )
+
+      toast({
+        title: 'Pesan Terkirim!',
+        description:
+          'Terima kasih telah menghubungi kami. Tim kami akan segera menghubungi Anda.'
+      })
+
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    } catch (error) {
+      toast({
+        title: 'Gagal Mengirim',
+        description:
+          'Terjadi kesalahan. Silakan coba lagi atau hubungi kami melalui email.',
+        variant: 'destructive'
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleChange = (
