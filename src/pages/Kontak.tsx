@@ -27,12 +27,12 @@ const Kontak = () => {
       // Ganti dengan Service ID, Template ID, dan Public Key dari EmailJS
       await emailjs.send(
         'service_nuxbi68', // Dari EmailJS dashboard
-        'template_o46fo89', // Dari EmailJS dashboard
+        'template_3q5156m', // Dari EmailJS dashboard
         {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
+          title: formData.subject, // ⬅️ dari input subject
+          user_name: formData.name, // ⬅️ nama
+          user_email: formData.email, // ⬅️ email
+          user_phone: formData.phone, // ⬅️ no hp
           message: formData.message
         },
         'mXWRadCtGxTMDQWFO' // Dari EmailJS dashboard
@@ -201,6 +201,8 @@ const Kontak = () => {
                       onChange={handleChange}
                       placeholder="08123456789"
                       className="border-2"
+                      pattern="[0-9]{8,}"
+                      title="Nomor telepon minimal 8 digit angka"
                     />
                   </div>
 
@@ -245,10 +247,17 @@ const Kontak = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full md:w-auto bg-gradient-primary hover:opacity-90"
+                  disabled={isLoading}
+                  className="w-full md:w-auto bg-gradient-primary hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <Send className="mr-2" size={18} />
-                  Kirim Pesan
+                  {isLoading ? (
+                    'Mengirim...'
+                  ) : (
+                    <>
+                      <Send className="mr-2" size={18} />
+                      Kirim Pesan
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
