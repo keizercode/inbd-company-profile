@@ -99,7 +99,7 @@ const StrukturOrganisasi = () => {
             <CardContent className="p-8">
               <div className="bg-white rounded-lg p-4 md:p-6">
                 <img
-                  src="/src/assets/struktur-org-2.png"
+                  src="/struktur-org-2.png"
                   alt="Struktur Organisasi PT INBD"
                   className="w-full h-auto"
                 />
