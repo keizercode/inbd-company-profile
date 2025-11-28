@@ -1,5 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Users } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
 
 const StrukturOrganisasi = () => {
   const leadership = [
@@ -83,29 +82,6 @@ const StrukturOrganisasi = () => {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Organization Structure */}
-      <section className="py-16 container mx-auto px-4 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <Card className="border-2 shadow-lg overflow-hidden">
-            <CardHeader className="border-b bg-muted/30">
-              <CardTitle className="flex items-center text-2xl">
-                <Users className="mr-3 text-primary" size={28} />
-                Bagan Struktur Organisasi
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-8">
-              <div className="bg-white rounded-lg p-4 md:p-6">
-                <img
-                  src="/struktur-org-2.png"
-                  alt="Struktur Organisasi PT INBD"
-                  className="w-full h-auto"
-                />
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
     </div>
