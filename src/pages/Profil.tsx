@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Building2, Briefcase, Target } from 'lucide-react'
+import { Briefcase, Building2, Target } from 'lucide-react'
 
 const Profil = () => {
   const kegiatanUsaha = [
@@ -37,23 +37,19 @@ const Profil = () => {
           </CardHeader>
           <CardContent className="p-8 space-y-4 text-foreground leading-relaxed">
             <p>
-              PT Integrasi Bisnis Digital (PT INBD) merupakan Perusahaan Join
-              Venture dari Anak Perusahaan PT Medika Loka Manajemen (PT MLM)
-              yaitu PT Integrasi Mitra Ventura (PT INMV), berdasarkan
-              kepemilikan saham sejak tahun 2019 yang tercantum dalam Akta
-              Pendirian Perseroan (PT INMV) No. 03 tanggal 09 Desember 2019,
-              yang dibuat dihadapan Rahayu Ningsih, S.H., M.Kn., notaris di
-              Sukabumi dan telah mendapat pengesahan dari Menteri Hukum dan Hak
-              Asasi Manusia Republik Indonesia No. AHU-0065856.AH.01.01.Tahun
-              2019 tanggal 11 Desember 2019.
+              PT Integrasi Bisnis Digital (INBD) adalah perusahaan teknologi
+              yang berfokus pada pengembangan perangkat lunak, implementasi
+              sistem, dan integrasi solusi digital untuk mendukung transformasi
+              bisnis khususnya di sektor kesehatan. PT. INBD menyediakan layanan
+              end-to-end dimulai dari perencanaan sistem, pengembangan aplikasi,
+              integrasi lintas platform, hingga operasional dan pemeliharaan.
             </p>
             <p>
-              Dan berdasarkan kepemilikan saham sejak tahun 2024 yang tercantum
-              dalam Akta Pendirian Perseroan Terbatas (PT INBD) No. 15 tanggal
-              08 November 2024, yang dibuat oleh Hj. Merry Desvita, S.H., M.Kn.,
-              notaris di Kabupaten Sukabumi dan telah mendapat pengesahan dari
-              Menteri Hukum dan Hak Asasi Manusia Republik Indonesia No.
-              AHU-0089252.AH.01.01.Tahun 2024 tanggal 09 November 2024.
+              Dengan tim profesional di bidang software development,
+              implementasi, network dan data management, INBD membantu
+              perusahaan mempercepat digitalisasi operasional, meningkatkan
+              efisiensi, serta memperkuat daya saing melalui penggunaan
+              teknologi modern.
             </p>
           </CardContent>
         </Card>
